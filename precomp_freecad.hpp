@@ -3,7 +3,6 @@
 #define PRE_COMPILE_PERFORMANCE_TEST_PRECOMP_HPP
 
 #ifdef PreCompiled
-#include <iostream>
 #include <vector>
 #include <string>
 #include <memory>
