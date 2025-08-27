@@ -13,8 +13,8 @@ do
     
     find . -name "standard" -delete 
     find . -name "standard.exe" -delete 
-    find . -name "standard*.o" -delete;
-    find . -name "standard*.obj" -delete;
+    find . -name "main*.o" -delete;
+    find . -name "main*.obj" -delete;
     (time cmake --build . --target standard)  2>> build_standard.log
 #    (time /usr/bin/clang++ -g -std=gnu++20 -fcolor-diagnostics -o CMakeFiles/standard.dir/main.cpp.o -c /home/markus/development/playground/pre_compile_performance_test/main.cpp) 2>> build_standard.log
 done
@@ -25,8 +25,8 @@ do
 
     find . -name "precompiled" -delete
     find . -name "precompiled.exe" -delete
-    find . -name "precompiled*.o" -delete;
-    find . -name "precompiled*.obj" -delete;
+    find . -name "main*.o" -delete;
+    find . -name "main*.obj" -delete;
     
     (time cmake --build . --target precompiled) 2>> build_precompiled.log  
     #(time /usr/bin/clang++   -g -std=gnu++20 -fcolor-diagnostics -Winvalid-pch -Xclang -include-pch -Xclang /home/markus/development/playground/pre_compile_performance_test/cmake-build-debug/CMakeFiles/pch_provider.dir/cmake_pch.hxx.pch -Xclang -include -Xclang /home/markus/development/playground/pre_compile_performance_test/cmake-build-debug/CMakeFiles/pch_provider.dir/cmake_pch.hxx -o CMakeFiles/precompiled.dir/main.cpp.o -c /home/markus/development/playground/pre_compile_performance_test/main.cpp) 2>> build_precompiled.log  
@@ -38,8 +38,8 @@ do
 
     find . -name "standard_freecad" -delete
     find . -name "standard_freecad.exe" -delete
-    find . -name "standard_freecad*.o" -delete;
-    find . -name "standard_freecad*.obj" -delete;
+    find . -name "main*.o" -delete;
+    find . -name "main*.obj" -delete;
     (time cmake --build . --target standard_freecad) 2>> build_freecad.log  
 done
 
@@ -49,7 +49,7 @@ do
 
     find . -name "precompiled_freecad" -delete
     find . -name "precompiled_freecad.exe" -delete
-    find . -name "precompiled_freecad*.o" -delete;
-    find . -name "precompiled_freecad*.obj" -delete;
+    find . -name "main*.o" -delete;
+    find . -name "main*.obj" -delete;
     (time cmake --build . --target  precompiled_freecad) 2>> build_freecad_precompiled.log  
 done
